@@ -1,0 +1,8 @@
+{
+  "name": "FamilySearch Desktop",
+  "version": "0.0.1",
+  "main": "main.js",
+  "description": "Natively browse FamilySearch",
+  "license": "GPLv3+",
+  "author": "Carson Bush"
+}
