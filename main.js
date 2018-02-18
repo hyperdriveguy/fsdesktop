@@ -1,14 +1,20 @@
-const {app, BrowserWindow, Menu} = require('electron')
-//  const path = require('path')
-//  const url = require('url')
+const {app, BrowserWindow, Menu, shell, nativeImage} = require('electron')
   
   // Keep a global reference of the window object, if you don't, the window will
   // be closed automatically when the JavaScript object is garbage collected.
   let win
   
   function createWindow () {
-    // Create the window.
-    win = new BrowserWindow({width: 800, height: 600})
+    // Create the window
+    icon = nativeImage.createFromDataURL('https://edge.fscdn.org/assets/docs/fs_logo_favicon_sq.png')
+    win = new BrowserWindow(
+      {
+        width: 800,
+        height: 600,
+        title: "FamilySearchDesktop",
+        icon: 'icon'
+      }
+    )
     makeMenu()
   
     // Load the FamilySearch website
@@ -38,11 +44,19 @@ const {app, BrowserWindow, Menu} = require('electron')
         ]
       },
       {
-        role: 'help',
+        role: 'Help',
         submenu: [
           {
-            label: 'Github',
-            click () { require('electron').shell.openExternal('https://github.com/hyperdriveguy/fsdesktop') }
+            label: 'Report Bug',
+            click () { shell.openExternal('https://github.com/hyperdriveguy/fsdesktop/issues') }
+          },
+          {
+            label: 'Contact Developer',
+            click () { shell.openExternal('mailto:hyperdriveguy@gmail.com') }
+          },
+          {
+            label: 'Source Code',
+            click () { shell.openExternal('https://github.com/hyperdriveguy/fsdesktop') }
           }
         ]
       }
