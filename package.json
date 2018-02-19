@@ -1,5 +1,6 @@
 {
-  "name": "FamilySearch Desktop",
+  "name": "fsdesktop",
+  "productName": "FamilySearch Desktop",
   "version": "0.0.1",
   "main": "main.js",
   "description": "Natively browse FamilySearch",
